@@ -1,5 +1,5 @@
 # Physics
-Physics project for nltuu
+## Physics project for nltuu
 
 https://angularjs.org/ - Front end framework
 
@@ -17,18 +17,23 @@ https://nodejs.org/en/download/
 
 After installation:
 
-Windows: run command prompt with admin rights.
-Linux: run with sudo.
-
+### Windows: run command prompt with admin rights.
+### Linux: run with sudo.
+```
 npm install -g yo gulp bower
 npm install -g generator-gulp-angular
+```
 
+```
 npm install
 bower install
+```
 
-To Run Project execute command:
+### To Run Project execute command:
 
+```
 gulp serve
+```
 
-Author:
+### Author:
 Kristina Del Rio Albrechet.

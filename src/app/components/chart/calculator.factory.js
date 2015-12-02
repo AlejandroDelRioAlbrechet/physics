@@ -8,26 +8,33 @@
     }, {});
 
     /*Random Data Generator */
-    function sinAndCos(capacity, voltage, resistance) {
-      var sin = [],
-          cos = [];
+    function sinAndCos(capacity, voltage, resistance, chargingOrDischarding) {
+      var values = [];
 
       //Data is represented as an array of {x,y} pairs.
-      for (var i = 0; i < 100; i++) {
-        sin.push({x: i, y: Math.sin((i + capacity / 2 ) / 10)});
-        cos.push({x: i, y: .5 * Math.cos(i / voltage + 2) - resistance / 10});
+      for (var i = 0; i < 10; i+=0.1) {
+        values.push({
+          x: i, 
+          y: chargingOrDischarding ? 
+              charging(i, voltage, resistance, capacity) : 
+              discharging (i, voltage, resistance, capacity)
+        });
       }
 
       return [{
-        values: sin,
+        values: values,
         key: 'Charge',
         color: '#ff7f0e'
-      }, {
-        values: cos,
-        key: 'Discharge',
-        color: '#2ca02c'
       }];
-    };
+    }
+
+    function charging (i, voltage, resistance, capacity) {
+      return voltage * ( 1 - Math.exp( -1 * (i / resistance * capacity) ) );
+    }
+
+    function discharging (i, voltage, resistance, capacity) {
+      return voltage * Math.exp( -1 * (i / resistance * capacity) );
+    }
   }
 
 })();

@@ -37,15 +37,19 @@
         <form role="form">
           <div class="form-group">
             <label for="capacity">Capacity</label>
-            <input id="capacity" type="range" min="0" max="100" value="1" step="1" ng-model="capacity" ng-change="changed()" />
+            <input id="capacity" type="range" min="1" max="10" value="1" step="1" ng-model="capacity" ng-change="changed()" />
           </div>
           <div class="form-group">
             <label for="voltage">Voltage</label>
-            <input id="voltage" type="range" min="0" max="100" value="1" step="1" ng-model="voltage" ng-change="changed()" />
+            <input id="voltage" type="range" min="100" max="200" value="100" step="20" ng-model="voltage" ng-change="changed()" />
           </div>
           <div class="form-group">
             <label for="resistance">Resistance</label>
-            <input id="resistance" type="range" min="0" max="100" value="1" step="1" ng-model="resistance" ng-change="changed()" />
+            <input id="resistance" type="range" min="1" max="10" value="1" step="1" ng-model="resistance" ng-change="changed()" />
+          </div>
+          <div class="form-group">
+            <input type="radio" name="dueTo" value="charding" checked ng-model="dueTo" ng-change="changed()">  Charging
+            <input type="radio" name="dueTo" value="discharging" ng-model="dueTo" ng-change="changed()">  Discharging
           </div>
         </form>
       </div>

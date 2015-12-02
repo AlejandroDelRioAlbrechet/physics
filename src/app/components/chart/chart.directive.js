@@ -23,8 +23,9 @@
       var vm = this;
 
       $scope.capacity   = 1;
-      $scope.voltage    = 1;
+      $scope.voltage    = 100;
       $scope.resistance = 1;
+      $scope.dueTo      = 'charding';
 
       $scope.options = {
         chart: {
@@ -46,7 +47,7 @@
             tooltipHide: function(e) { console.log("tooltipHide"); }
           },
           xAxis: {
-            axisLabel: 'Time (ms)'
+            axisLabel: 'Time (S)'
           },
           yAxis: {
             axisLabel: 'Voltage (U)',
@@ -58,11 +59,15 @@
         }
       };
 
-      $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance);
+      $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, isChardging());
 
       $scope.changed = function () {
-        $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance);
+        $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, isChardging());
       };
+
+      function isChardging () {
+        return $scope.dueTo === 'charding';
+      }
     }
   }
 

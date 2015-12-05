@@ -17,7 +17,7 @@
           x: i, 
           y: chargingOrDischarding ? 
               charging(i, voltage, resistance, capacity) : 
-              discharging (i, voltage, resistance, capacity)
+              discharging(i, voltage, resistance, capacity)
         });
       }
 

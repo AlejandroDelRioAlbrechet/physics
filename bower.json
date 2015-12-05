@@ -16,7 +16,8 @@
     "animate.css": "~3.3.0",
     "angular": "~1.4.0",
     "angular-route-segment" : "latest",
-    "angular-nvd3" : "latest"
+    "angular-nvd3" : "latest",
+    "angular-i18n" : "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

@@ -47,13 +47,13 @@
             tooltipHide: function(e) { console.log("tooltipHide"); }
           },
           xAxis: {
-            axisLabel: 'Time (S)',
+            axisLabel: 'Час (мкС)',
             tickFormat: function(d){
               return d3.format('.02f')(d);
             }
           },
           yAxis: {
-            axisLabel: 'Voltage (U)',
+            axisLabel: 'Напруга (U)',
             tickFormat: function(d){
               return d3.format('.02f')(d);
             },

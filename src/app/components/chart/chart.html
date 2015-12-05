@@ -3,26 +3,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          Chart
+          Розрядження та зарядження конденсатора
         </h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-4">
-            <h4>Capacity: <span ng-bind="capacity"></span></h4>
-          </div>
-          <div class="col-md-4">
-            <h4>Voltage: <span ng-bind="voltage"></span></h4>
-          </div>
-          <div class="col-md-4">
-            <h4>Resistance: <span ng-bind="resistance"></span></h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <nvd3 options="options" data="data"></nvd3>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -30,26 +12,26 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          Parameters Input
+          Вхідні параметри
         </h3>
       </div>
       <div class="panel-body">
         <form role="form">
           <div class="form-group">
-            <label for="capacity">Capacity</label>
+            <label for="capacity">Ємність: <span ng-bind="capacity"></span></label>
             <input id="capacity" type="range" min="1" max="10" value="1" step="1" ng-model="capacity" ng-change="changed()" />
           </div>
           <div class="form-group">
-            <label for="voltage">Voltage</label>
+            <label for="voltage">Напруга: <span ng-bind="voltage"></span>/label>
             <input id="voltage" type="range" min="100" max="200" value="100" step="20" ng-model="voltage" ng-change="changed()" />
           </div>
           <div class="form-group">
-            <label for="resistance">Resistance</label>
+            <label for="resistance">Опір: <span ng-bind="resistance"></label>
             <input id="resistance" type="range" min="1" max="10" value="1" step="1" ng-model="resistance" ng-change="changed()" />
           </div>
           <div class="form-group">
-            <input type="radio" name="dueTo" value="charding" checked ng-model="dueTo" ng-change="changed()">  Charging
-            <input type="radio" name="dueTo" value="discharging" ng-model="dueTo" ng-change="changed()">  Discharging
+            <input type="radio" name="dueTo" value="charding" checked ng-model="dueTo" ng-change="changed()">  Зарядження
+            <input type="radio" name="dueTo" value="discharging" ng-model="dueTo" ng-change="changed()">  Розрядження
           </div>
         </form>
       </div>

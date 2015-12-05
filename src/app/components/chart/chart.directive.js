@@ -47,7 +47,10 @@
             tooltipHide: function(e) { console.log("tooltipHide"); }
           },
           xAxis: {
-            axisLabel: 'Time (S)'
+            axisLabel: 'Time (S)',
+            tickFormat: function(d){
+              return d3.format('.02f')(d);
+            }
           },
           yAxis: {
             axisLabel: 'Voltage (U)',

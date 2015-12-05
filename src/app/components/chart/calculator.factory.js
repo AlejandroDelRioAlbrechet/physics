@@ -12,7 +12,7 @@
       var values = [];
 
       //Data is represented as an array of {x,y} pairs.
-      for (var i = 0; i < 10; i+=0.1) {
+      for (var i = 0; i <= 8; i+=0.1) {
         values.push({
           x: i, 
           y: chargingOrDischarding ? 
@@ -29,11 +29,11 @@
     }
 
     function charging (i, voltage, resistance, capacity) {
-      return voltage * ( 1 - Math.exp( -1 * (i / resistance * capacity) ) );
+      return voltage * ( 1 - Math.exp( -1 * ( i / (resistance * capacity) ) ) );
     }
 
     function discharging (i, voltage, resistance, capacity) {
-      return voltage * Math.exp( -1 * (i / resistance * capacity) );
+      return voltage * Math.exp( -1 * ( i / (resistance * capacity) ) );
     }
   }
 

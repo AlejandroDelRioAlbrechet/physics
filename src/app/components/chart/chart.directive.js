@@ -39,6 +39,8 @@
           },
           x: function(d){ return d.x; },
           y: function(d){ return d.y; },
+          yDomain : [-20, 220],
+          xDomain : [-2, 10],
           useInteractiveGuideline: true,
           dispatch: {
             stateChange: function(e) { console.log("stateChange"); },
@@ -57,7 +59,8 @@
             tickFormat: function(d){
               return d3.format('.02f')(d);
             },
-            axisLabelDistance: -10
+            axisLabelDistance: -10,
+            domain : [ 0, 400 ]
           }
         }
       };

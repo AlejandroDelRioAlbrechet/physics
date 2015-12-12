@@ -53,7 +53,7 @@
             }
           },
           yAxis: {
-            axisLabel: 'Напруга (U)',
+            axisLabel: 'Напруга (В)',
             tickFormat: function(d){
               return d3.format('.02f')(d);
             },

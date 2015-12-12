@@ -12,7 +12,7 @@
       var values = [];
 
       //Data is represented as an array of {x,y} pairs.
-      for (var i = 0; i <= 8; i+=0.1) {
+      for (var i = 0; i <= 10; i+=0.1) {
         values.push({
           x: i, 
           y: chargingOrDischarding ? 
@@ -23,7 +23,7 @@
 
       return [{
         values: values,
-        key: 'Charge',
+        key: chargingOrDischarding ? 'Зарядження' : 'Розрядження',
         color: '#ff7f0e'
       }];
     }

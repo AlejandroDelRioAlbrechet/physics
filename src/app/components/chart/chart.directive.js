@@ -39,8 +39,8 @@
           },
           x: function(d){ return d.x; },
           y: function(d){ return d.y; },
-          yDomain : [-20, 220],
-          xDomain : [-2, 10],
+          yDomain : [0, 200],
+          xDomain : [0, 10],
           useInteractiveGuideline: true,
           dispatch: {
             stateChange: function(e) { console.log("stateChange"); },
@@ -65,15 +65,15 @@
         }
       };
 
-      $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, isChardging());
+      $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, 'charging');
 
       $scope.changed = function () {
-        $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, isChardging());
+        $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, $scope.dueTo);
       };
 
-      function isChardging () {
-        return $scope.dueTo === 'charding';
-      }
+      // function isChardging () {
+      //   return $scope.dueTo === 'charding';
+      // }
     }
   }
 

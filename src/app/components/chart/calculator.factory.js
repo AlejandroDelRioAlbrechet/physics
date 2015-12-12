@@ -9,6 +9,8 @@
 
     /*Random Data Generator */
     function calculate(capacity, voltage, resistance, chargingOrDischarding) {
+      var res;
+
       switch (chargingOrDischarding) {
         case 'charging' :
           var values = [];
@@ -19,7 +21,7 @@
             }); 
           }
 
-          return [{
+          res = [{
             values: values,
             key: 'Зарядження',
             color: '#ff7f0e'
@@ -34,13 +36,13 @@
             }); 
           }
 
-          return [{
+          res = [{
             values: values,
             key: 'Розрядження',
-            color: '#ccc'
+            color: '#669c3b'
           }];
           break;
-        case 'chargingDischarding' :
+        case 'chargingDischarging' :
           var valuesCharging = [],
               valuesDischarging = [];
 
@@ -55,34 +57,19 @@
             }); 
           }
 
-          return [{
+          res = [{
             values: valuesCharging,
             key: 'Зарядження',
             color: '#ff7f0e'
           }, {
             values: valuesDischarging,
             key: 'Розрядження',
-            color: '#ccc'
+            color: '#669c3b'
           }];
+          
           break;
       }
-      // var values = [];
-
-      // //Data is represented as an array of {x,y} pairs.
-      // for (var i = 0; i <= 10; i+=0.1) {
-      //   values.push({
-      //     x: i, 
-      //     y: chargingOrDischarding ? 
-      //         charging(i, voltage, resistance, capacity) : 
-      //         discharging(i, voltage, resistance, capacity)
-      //   });
-      // }
-
-      // return [{
-      //   values: values,
-      //   key: chargingOrDischarding ? 'Зарядження' : 'Розрядження',
-      //   color: '#ff7f0e'
-      // }];
+      return res;
     }
 
     function charging (i, voltage, resistance, capacity) {

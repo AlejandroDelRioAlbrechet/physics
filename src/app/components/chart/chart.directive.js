@@ -30,7 +30,7 @@
       $scope.options = {
         chart: {
           type: 'lineChart',
-          height: 450,
+          height: 427,
           margin : {
             top: 20,
             right: 20,
@@ -65,10 +65,13 @@
         }
       };
 
-      $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, 'charging');
+      $scope.dueTo = 'charging';
+      $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, $scope.dueTo);
 
       $scope.changed = function () {
-        $scope.data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, $scope.dueTo);
+        var data = Calulator.calculate($scope.capacity, $scope.voltage, $scope.resistance, $scope.dueTo);
+        console.log(data);
+        $scope.data = data;
       };
 
       // function isChardging () {

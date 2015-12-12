@@ -1,9 +1,9 @@
 <div class="row chart">
   <div class="col-md-8">
-    <div class="panel panel-default">
+    <div class="panel panel-info">
       <div class="panel-heading">
         <h3 class="panel-title">
-          <b><big>РОЗРЯДЖЕННЯ ТА ЗАРЯДЖЕННЯ КОНДЕНСАТОРА</big></b>
+          <i class="glyphicon glyphicon-stats"></i>&nbsp;Розоядження та зарядження конденсатора
         </h3>
       </div>
       <div class="panel-body">
@@ -16,10 +16,10 @@
     </div>
   </div>
   <div class="col-md-4">
-    <div class="panel panel-default">
+    <div class="panel panel-info">
       <div class="panel-heading">
         <h3 class="panel-title">
-          <b>Вхідні параметри</b>
+          <i class="glyphicon glyphicon-cog"></i>&nbsp;Вхідні параметри
         </h3>
       </div>
       <div class="panel-body">
@@ -37,11 +37,25 @@
             <input id="resistance" type="range" min="1" max="10" value="1" step="1" ng-model="resistance" ng-change="changed()" />
           </div>
           <div class="form-group">
-            <input type="radio" name="dueTo" value="charding" checked ng-model="dueTo" ng-change="changed()">  <b><big>Зарядження</big></b>
+            <input type="radio" name="dueTo" value="charging" checked ng-model="dueTo" ng-change="changed()">  <b><big>Зарядження</big></b>
+            <br>
             <input type="radio" name="dueTo" value="discharging" ng-model="dueTo" ng-change="changed()">  <b><big>Розрядження</big></b>
-             <input type="radio" name="dueTo" value="chardingDischarging" checked ng-model="dueTo" ng-change="changed()">  <b><big>Зарядження/Розрядження</big></b>
+            <br>
+            <input type="radio" name="dueTo" value="chargingDischarging" checked ng-model="dueTo" ng-change="changed()">  <b><big>Зарядження/Розрядження</big></b>
           </div>
         </form>
+      </div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="glyphicon glyphicon-pushpin"></i>&nbsp;Автор
+        </h3>
+      </div>
+      <div class="panel-body">
+        <h5>Студенка групи КН-11</h5>
+        <h5>Крістіна Дель Ріо Альбречет</h5>
+        <h5><a href="mailto:kalbrechet@gmail.com">Служба підтримки</a></h5>
       </div>
     </div>
   </div>
